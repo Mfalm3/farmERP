@@ -2,48 +2,75 @@
 @section('title','Login')
 @section('content')
 
-    <div class="animate form login_form">
-        <section class="login_content">
-            <form role="form" method="POST" action="{{ url('/login') }}">
-                {{csrf_field()}}
-                <h1>Login</h1>
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input type="email" class="form-control" name="email" placeholder="email" required="" />
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
+<style type="text/css">
+    .info-danger{
+        color: red;
+    }
+</style>
+
+<div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="images/img-01.png" alt="IMG">
+                </div>
+
+                <form class="login100-form validate-form" role="form" method="POST" action="{{ url('/login') }}">
+                    {{csrf_field()}}
+                    <span class="login100-form-title">
+                        Member Login
                     </span>
-                    @endif
-                </div>
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required="" />
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                    @endif
-                </div>
-                <div>
-                    <button class="btn btn-default submit" type="submit">Log in</button>
-                    <a class="reset_pass" href="{{ url('/password/reset') }}">Lost your password?</a>
-                </div>
 
-                <div class="clearfix"></div>
-
-                <div class="separator">
-                    <p class="change_link">New to site?
-                        <a href="{{route('register')}}" class="to_register"> Create Account </a>
-                    </p>
-
-                    <div class="clearfix"></div>
-                    <br />
-
-                    <div>
-                        <h1><i class="fa fa-plus-circle"></i> {{config('app.name')}}</h1>
-                        <p>©{{date('Y')}} </p>
+                    <div class="wrap-input100 validate-input{{ $errors->has('email') ? ' has-error' : '' }}" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="email" name="email" placeholder="Email" required autocomplete="off" value="{{old('email')}}">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
                     </div>
-                </div>
-            </form>
-        </section>
+                    
+                    <div class="wrap-input100 validate-input{{ $errors->has('password') ? ' has-error' : '' }}" data-validate = "Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Password" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    @if ($errors->has('email'))
+                        <span class="help-block info-danger animated infinite pulse">
+                        <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                    @if ($errors->has('password'))
+                        <span class="help-block info-danger animated infinite pulse">
+                        <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                    
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+
+                    <div class="text-center p-t-12">
+                        <span class="txt1">
+                            Forgot
+                        </span>
+                        <a class="txt2" href="{{ url('/password/reset') }}">
+                            Username / Password?
+                        </a>
+                    </div>
+
+                    <div class="text-center p-t-136">
+                        <a class="txt2" href="#">
+                            Create your Account
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    
 @endsection
