@@ -27,5 +27,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('dashboard','HomeController@index')->name('dashboard');
 
 
+    Route::get('/profile', 'HomeController@profile')->name('profile');
+
+
 });
 
