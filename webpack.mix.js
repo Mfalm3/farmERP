@@ -49,6 +49,7 @@ mix.combine([
     //lets add custom scripts
     'resources/assets/js/main.js',
     'resources/assets/js/tilt.jquery.min.js',
+    'resources/assets/js/jquery-ui.min.js',
     'resources/assets/js/custom.js', //this default from gentelella
     'resources/assets/js/init.js' //initialize other plugins here
 ],'public/js/app.js');
