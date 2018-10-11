@@ -37,12 +37,12 @@
                         </span>
                     </div>
                     @if ($errors->has('email'))
-                        <span class="help-block info-danger animated infinite pulse">
+                        <span class="help-block info-danger animated slower pulse">
                         <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
                     @if ($errors->has('password'))
-                        <span class="help-block info-danger animated infinite pulse">
+                        <span class="help-block info-danger animated slower pulse">
                         <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
@@ -59,13 +59,6 @@
                         </span>
                         <a class="txt2" href="{{ url('/password/reset') }}">
                             Username / Password?
-                        </a>
-                    </div>
-
-                    <div class="text-center p-t-136">
-                        <a class="txt2" href="#">
-                            Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                     </div>
                 </form>
