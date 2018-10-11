@@ -35,7 +35,7 @@ class SeedRecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('seeds.create');
     }
 
     /**

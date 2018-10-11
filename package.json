@@ -19,6 +19,7 @@
         "vue": "^2.5.16"
     },
     "dependencies": {
-        "gentelella": "^1.4.0"
+        "gentelella": "^1.4.0",
+        "jquery-ui": "^1.12.1"
     }
 }
