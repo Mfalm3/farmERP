@@ -27,4 +27,16 @@ $(document).ready(function() {
         readURL(this);
     });
 
+    if ($(window).width() < 992) {
+        $('body').switchClass('nav-md', 'nav-sm');
+    }
+    $(window).resize(()=>{
+        console.log($(window).width());
+    if ($(window).width() < 992){
+        $('body').switchClass('nav-md','nav-sm');
+        }else{
+        $('body').switchClass('nav-sm','nav-md');
+    }
+    });
+
 });
