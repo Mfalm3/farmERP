@@ -36,7 +36,8 @@ Route::group(['middleware'=>'auth'],function (){
     | Seeds Records
     |--------------------------------------------------------------------------
     */
-    Route::get('/seeds/plant','SeedRecordController@create');
+    Route::get('/seed/plant','SeedRecordController@create');
+    Route::post('','SeedRecordController@store');
 
 });
 
