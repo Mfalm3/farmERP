@@ -6,6 +6,9 @@
     .info-danger{
         color: red;
     }
+    .wrap-login100 {
+        padding: 100px 130px 55px 95px !important;
+    }
 </style>
 
 <div class="limiter">
