@@ -21,6 +21,12 @@
                         Send Password Reset Link
                     </span>
 
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
                     <div class="wrap-input100 col-sm-12 validate-input{{ $errors->has('email') ? ' has-error' : '' }}" data-validate = "Valid email is required: ex@abc.xyz">
                         <input class="input100" type="email" name="email" placeholder="Email" required autocomplete="off" value="{{old('email')}}">
                         <span class="focus-input100"></span>
