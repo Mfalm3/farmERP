@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title','Login')
+@section('title','Forgot Password')
 @section('content')
 
     <style type="text/css">
